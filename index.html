@@ -6,43 +6,59 @@
   <style>
     body {
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background: #ffdde1;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
       margin: 0;
+      font-family: "Comic Sans MS", cursive, sans-serif;
     }
     .heart {
+      position: relative;
       width: 100px;
       height: 90px;
-      position: relative;
+      background: red;
+      transform: rotate(-45deg);
       animation: pulse 1s infinite;
     }
     .heart:before,
     .heart:after {
       content: "";
       position: absolute;
-      top: 0;
       width: 100px;
       height: 90px;
       border-radius: 50%;
       background: red;
     }
     .heart:before {
-      left: -50px;
+      top: -50px;
+      left: 0;
     }
     .heart:after {
-      left: 0;
-      top: -50px;
+      left: 50px;
+      top: 0;
     }
     @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.2); }
-      100% { transform: scale(1); }
+      0% { transform: rotate(-45deg) scale(1); }
+      50% { transform: rotate(-45deg) scale(1.2); }
+      100% { transform: rotate(-45deg) scale(1); }
+    }
+    h1 {
+      margin-top: 30px;
+      color: white;
+      text-shadow: 2px 2px 5px #c0392b;
+      font-size: 2em;
+      animation: fadeIn 2s ease-in-out infinite alternate;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0.6; }
+      to { opacity: 1; }
     }
   </style>
 </head>
 <body>
   <div class="heart"></div>
+  <h1>Для тебя 💕</h1>
 </body>
 </html>
